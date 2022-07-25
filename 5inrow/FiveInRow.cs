@@ -16,6 +16,7 @@ namespace _5inrow
             game.Play(5);
             game.PrintBoard();
             game.GetMove(2);
+            
             Console.ReadLine();
         }
     }

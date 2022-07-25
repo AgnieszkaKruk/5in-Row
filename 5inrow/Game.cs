@@ -9,18 +9,25 @@ namespace _5inrow
     {
         public class Game : IGame
         {
-            public int[,] Board { get; set; }
 
-            public Game(int nRows, int nCols)
+        public int[,] Board { get; set; } = new int[5, 5]
+        {
+           {0,0,0,0,0 },
+           {0,0,0,0,0},
+           {0,0,0,0,0 },
+           {0,0,0,0,0 },
+           {0,0,0,0,0 },
+
+        };
+        public char current_player_move { get; private set; }
+
+        public Game(int nRows, int nCols)
             {
             Board = new int[nRows, nCols];
             }
 
             public (int, int) GetMove(int player)
             {
-            
-            
-
             while (true) {
                 Console.Write("Type coordinates e.x. A1: ");
                 string coordinates = Console.ReadLine();
@@ -37,17 +44,15 @@ namespace _5inrow
                             int row = "12345".IndexOf(separate_coordinates[1]);
                             int col = "ABCDE".IndexOf(separate_coordinates[0]);
                             Console.WriteLine("Got it!");
+                            player = Board[row, col];
+                            PrintBoard();
                             return (row, col);
                         }
                     }
                 }
-                Console.WriteLine("Invalid coordinates. Try again: ");
-                Console.WriteLine("Invalid coordinates. Try again: ");
-                coordinates = Console.ReadLine();
-                
-            }
-       
-            
+                Console.WriteLine("Invalid coordinates. Try again: "); 
+                coordinates = Console.ReadLine();      
+            }   
         }
 
 
@@ -61,8 +66,26 @@ namespace _5inrow
                 return (0, 0);
             }
 
-            public void Mark(int player, int row, int col)
-            {
+        public void Mark(int player, int row, int col)
+
+        {
+
+            var coordinatess = GetMove(player);
+            row = coordinatess.Item1;
+            col = coordinatess.Item2;
+            player = Board[row,col];
+            PrintBoard();
+          
+
+
+
+
+
+
+
+
+
+
             }
 
             public bool HasWon(int player, int howMany)
@@ -70,45 +93,54 @@ namespace _5inrow
                 return false;
             }
 
-            public bool IsFull()
+        public bool IsFull()
+        {
+            //foreach (var i in Board)
             {
-                return false;
+                //foreach (var j in i)
+                {
+
+                   // if (j == 0)
+                    {
+                    //    return false;
+                    }
+                }     
+
             }
+            return true;
+        }
+
 
             public void PrintBoard()
             {
-            var board = new List<string> { ".", ".", ".", ".", "." };
+            int []board =  {0,0,0,0,0 };
             var boardLetters = new List<string> { " ", "A", "B", "C", "D", "E" };
-            var bigboard = new List<List<string>> { };
-            bigboard.Add(boardLetters);
-            bigboard.Add(board);
-            bigboard.Add(board);
-            bigboard.Add(board);
-            bigboard.Add(board);
+         
             int number = 0;
             foreach (var a in boardLetters)
             {
                 Console.Write(a + " | ");
             }
 
-
             Console.Write("\n-----------------------\n");
-            foreach (var inboard in bigboard)
-            {
-                number++;
+            
+    
+                foreach (var inboard in Board)
 
-                Console.Write(number + " | ");
-                foreach (var b in board)
                 {
-                    Console.Write(b + " | ");
+                if (number < 5)
+                {
+                    number++;
 
+                    Console.Write(number + " | ");
+                    foreach (var b in board)
+                    {
+                        Console.Write(b + " | ");
+
+                    }
+                    Console.Write("\n-----------------------\n");
                 }
-
-
-                Console.Write("\n-----------------------\n");
-
-            }
-
+                }
         }
 
         public void EnableAi(int player)
