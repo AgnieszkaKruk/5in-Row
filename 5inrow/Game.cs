@@ -44,8 +44,8 @@ namespace _5inrow
                             int row = "12345".IndexOf(separate_coordinates[1]);
                             int col = "ABCDE".IndexOf(separate_coordinates[0]);
                             Console.WriteLine("Got it!");
-                            player = Board[row, col];
-                            PrintBoard();
+                            
+                            Mark(player, row,col);
                             return (row, col);
                         }
                     }
@@ -70,10 +70,8 @@ namespace _5inrow
 
         {
 
-            var coordinatess = GetMove(player);
-            row = coordinatess.Item1;
-            col = coordinatess.Item2;
-            player = Board[row,col];
+            Board[row, col] = player;
+
             PrintBoard();
           
 
@@ -113,9 +111,9 @@ namespace _5inrow
 
             public void PrintBoard()
             {
-            int []board =  {0,0,0,0,0 };
             var boardLetters = new List<string> { " ", "A", "B", "C", "D", "E" };
-         
+           
+
             int number = 0;
             foreach (var a in boardLetters)
             {
@@ -123,25 +121,24 @@ namespace _5inrow
             }
 
             Console.Write("\n-----------------------\n");
-            
-    
-                foreach (var inboard in Board)
 
+
+            for (int i = 0; i < 5; i++)
+            {
+                number++;
+                Console.Write(number + " | ");
+                for (int j = 0; j < 5; j++)
                 {
-                if (number < 5)
-                {
-                    number++;
+                    Console.Write(Board[i, j] + " | ");
 
-                    Console.Write(number + " | ");
-                    foreach (var b in board)
-                    {
-                        Console.Write(b + " | ");
+                }
 
-                    }
-                    Console.Write("\n-----------------------\n");
-                }
-                }
+                Console.Write("\n-----------------------\n");
+
+            }
+
         }
+        
 
         public void EnableAi(int player)
             {
