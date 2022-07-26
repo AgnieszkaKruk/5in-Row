@@ -55,12 +55,6 @@ namespace _5inrow
             }   
         }
 
-
-
-
-
-
-
         public (int, int) GetAiMove(int player)
             {
                 return (0, 0);
@@ -69,45 +63,35 @@ namespace _5inrow
         public void Mark(int player, int row, int col)
 
         {
-
             Board[row, col] = player;
 
             PrintBoard();
-          
-
-
-
-
-
-
-
-
-
-
+     
             }
 
-            public bool HasWon(int player, int howMany)
+        public bool HasWon(int player, int howMany)
             {
                 return false;
             }
 
         public bool IsFull()
         {
-            //foreach (var i in Board)
+            for (int i = 0; i < 5; i++)
             {
-                //foreach (var j in i)
+              
+                for (int j = 0; j < 5; j++)
                 {
-
-                   // if (j == 0)
-                    {
-                    //    return false;
-                    }
-                }     
-
+                    if  (Board[i,j] == 0) {
+                        Console.WriteLine("Board is not full");
+                        return false;
+                    }   
+                }  
             }
+            Console.WriteLine("Board is full");
             return true;
-        }
 
+        }
+            
 
             public void PrintBoard()
             {
