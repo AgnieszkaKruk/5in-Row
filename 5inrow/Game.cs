@@ -43,23 +43,15 @@ namespace _5inrow
                 }
                 Console.WriteLine("Invalid coordinates. Try again: ");
                 Console.WriteLine("Invalid coordinates. Try again: ");
-                coordinates = Console.ReadLine();
-                
+                coordinates = Console.ReadLine();                
             }
-       
             
         }
 
-
-
-
-
-
-
         public (int, int) GetAiMove(int player)
             {
-                return (0, 0);
-            }
+            return (0, 0);
+        }
 
             public void Mark(int player, int row, int col)
             {

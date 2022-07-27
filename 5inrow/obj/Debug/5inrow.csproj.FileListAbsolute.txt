@@ -6,3 +6,11 @@ C:\Users\Dell\source\repos\5inrow\5inrow\obj\Debug\5inrow.csproj.SuggestedBindin
 C:\Users\Dell\source\repos\5inrow\5inrow\obj\Debug\5inrow.csproj.CoreCompileInputs.cache
 C:\Users\Dell\source\repos\5inrow\5inrow\obj\Debug\5inrow.exe
 C:\Users\Dell\source\repos\5inrow\5inrow\obj\Debug\5inrow.pdb
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\bin\Debug\5inrow.exe.config
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\bin\Debug\5inrow.exe
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\bin\Debug\5inrow.pdb
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\obj\Debug\5inrow.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\obj\Debug\5inrow.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\obj\Debug\5inrow.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\obj\Debug\5inrow.exe
+C:\Users\HP\Desktop\codecool\MODUL_3\5inrow\5inrow\obj\Debug\5inrow.pdb
