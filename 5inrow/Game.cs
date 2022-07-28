@@ -10,22 +10,22 @@ namespace _5inrow
     public class Game : IGame
     {
 
-        public int[,] Board { get; set; } = new int[5, 5]
+        public int[,] Board { get; set; } = new int[5, 5] //magic numbers zastapic to BoardSize // zdublowane 28
         {
            {0,0,0,0,0 },
-           {0,0,0,0,0},
+           {0,0,0,0,0 },
            {0,0,0,0,0 },
            {0,0,0,0,0 },
            {0,0,0,0,0 },
 
         };
-        public char current_player_move { get; private set; }
+        public char current_player_move { get; private set; } // bez podlogi
 
         public List <string> taken_coordinates = new List<string> { };
 
         public Game(int nRows, int nCols)
         {
-            Board = new int[nRows, nCols];
+            Board = new int[nRows, nCols]; 
         }
 
         public (int, int) GetMove(int player)
@@ -34,7 +34,7 @@ namespace _5inrow
             Console.WriteLine("Starting get move");
             
             {
-                if (true)
+                if (true) // while
                 {
                     
                     Console.WriteLine("List of tsken coordinates: ");
@@ -43,21 +43,21 @@ namespace _5inrow
                         Console.WriteLine(element);
                     }
                     Console.Write("Type coordinates e.x. A1: ");
-                    string coordinates = Console.ReadLine();
+                    string coordinates = Console.ReadLine(); // skrócic do 1 linijki
                     string upper_coordinates = coordinates.ToUpper();
                     char[] separate_coordinates = upper_coordinates.ToCharArray();
                     if (separate_coordinates.Length == 2)
                     {
                         if (separate_coordinates[0] == 'A' || separate_coordinates[0] == 'B' || separate_coordinates[0] == 'C' || separate_coordinates[0] == 'D' ||
-        separate_coordinates[0] == 'E')
+        separate_coordinates[0] == 'E') // separate_coordinates[0] >= 'A' && separeate_coordinates[0] <= 'E'
                         {
                             if (separate_coordinates[1] == '1' || separate_coordinates[1] == '2' || separate_coordinates[1] == '3' || separate_coordinates[1] == '4' ||
-        separate_coordinates[1] == '5')
+        separate_coordinates[1] == '5') // separate_coordinates[0] >= '1' && separeate_coordinates[0] <= '5'
                             {
                                 if (taken_coordinates.IndexOf(upper_coordinates) != -1)
                                 {
                                     Console.WriteLine("you already chose this coordinates.Choose another one:");
-                                    return GetMove(player);
+                                    return GetMove(player); // continue przy while
                                     
                                 }
 
@@ -65,9 +65,9 @@ namespace _5inrow
                                 int col = "ABCDE".IndexOf(separate_coordinates[0]);
                                 Console.WriteLine("Got it!");
 
-                                Mark(player, row, col);
+                                Mark(player, row, col); // przeniesc poza metode GetMove
                                 taken_coordinates.Add(upper_coordinates);
-                                Console.WriteLine("List of tsken coordinates: ");
+                                Console.WriteLine("List of tsken coordinates: "); // zrobic z tego oddzielna metode
                                 foreach (string element in taken_coordinates) {
                                     Console.WriteLine(element);
                                 }
@@ -94,10 +94,10 @@ namespace _5inrow
 
         {
             Board[row, col] = player;
-            PrintBoard();
+            PrintBoard(); // glowna petla kolejnosc metod
         }
 
-        public bool HasWon(int player, int howMany)
+        public bool HasWon(int player, int howMany) // sprawdzic to w petli skrocic zapis
             {
             int i = 0;
             int j = 0; 
@@ -166,7 +166,7 @@ namespace _5inrow
             {
             }
 
-        public void Play(int howMany)
+        public void Play(int howMany) // glowna petla
         {
             Console.WriteLine("Choose player: 1 or 2?");
             string p = Console.ReadLine();
@@ -183,6 +183,14 @@ namespace _5inrow
                 if (IsFull()) {
                     Console.WriteLine("end of game- board is full");
                     break;
+                }
+                if (player == 1)
+                {
+                    player = 2;
+                }
+                else
+                {
+                    player = 1;
                 }
             }
             PrintResult(player);
