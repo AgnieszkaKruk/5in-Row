@@ -11,9 +11,11 @@ namespace _5inrow
         public static void Main(string[] args)
         {
             var game = new Game(11, 11);
+           
             game.EnableAi(1);
             game.EnableAi(2);
             game.Play(5);
+
            ;
             
 
