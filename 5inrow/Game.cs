@@ -125,7 +125,7 @@ namespace _5inrow
         }
     
 
-        public (int, int) GetAiMove(int player)
+        public (int, int) GetAiMove(int player) //
             {
             public int howMany = 5;
             public int EMPTY = 0;
@@ -140,7 +140,8 @@ namespace _5inrow
                     if(Board[row,col] == EMPTY)
                     {
                         (int, int) pos = (row, col);
-                        
+                        // aktualny stan planszy = przyszly stan planszy ( raz dla 1 gracza, raz dla 2 gracza, potem sprawdzic)
+                        // dodac funkcje swith player
                         bool isWinning = HasWon(player, howMany);
                         bool isLosing = HasWon(3 - player, howMany);
 
