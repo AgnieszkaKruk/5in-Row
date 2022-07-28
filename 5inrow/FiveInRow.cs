@@ -14,8 +14,9 @@ namespace _5inrow
             game.EnableAi(1);
             game.EnableAi(2);
             game.Play(5);
-            game.PrintBoard();
-            game.GetMove(2);
+           ;
+            
+
             Console.ReadLine();
         }
     }
