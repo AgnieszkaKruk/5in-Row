@@ -9,6 +9,7 @@ namespace _5inrow
 
     {
     public class Game : IGame
+    
     {
 
         public int[,] Board { get; set; } = new int[5, 5] 
@@ -25,50 +26,62 @@ namespace _5inrow
 
         public Game(int nRows, int nCols)
         {
+            
             Board = new int[nRows, nCols]; 
         }
 
         public (int, int) GetMove(int player)
+
             
 
         {
            
             Console.WriteLine("Move player: " + player);
             
+
             {
                 while(true)
                 {                   
      
-                    Console.Write("Type coordinates e.x. A1: ");
+                    Console.Write("Type coordinates e.x. A1 or press q to quit: ");
+
                     string coordinates = Console.ReadLine(); 
-                    string upperCoordinates = coordinates.ToUpper();
-                    char[] separateCoordinates = upperCoordinates.ToCharArray();
-                    if (separateCoordinates.Length == 2)
+                    if (coordinates != "q")
                     {
-                        if (separateCoordinates[0] >= 'A' && separateCoordinates[0] <= 'E')  
+                        string upperCoordinates = coordinates.ToUpper();
+                        char[] separateCoordinates = upperCoordinates.ToCharArray();
+                        if (separateCoordinates.Length == 2)
                         {
-                            if (separateCoordinates[1] >= '1' && separateCoordinates[1] <= '5')  
+                            if (separateCoordinates[0] >= 'A' && separateCoordinates[0] <= 'E')
                             {
-                                if (takenCoordinates.IndexOf(upperCoordinates) != -1)
+                                if (separateCoordinates[1] >= '1' && separateCoordinates[1] <= '5')
                                 {
-                                    Console.WriteLine("Coordinates taken.Choose another ones.");
-                                    continue;                                  
+                                    if (takenCoordinates.IndexOf(upperCoordinates) != -1)
+                                    {
+                                        Console.WriteLine("Coordinates taken.Choose another ones.");
+                                        continue;
 
-                                }                              
-                                int row = "12345".IndexOf(separateCoordinates[1]);
-                                int col = "ABCDE".IndexOf(separateCoordinates[0]);
-                                Console.WriteLine("Got it!");
+                                    }
+                                    int row = "12345".IndexOf(separateCoordinates[1]);
+                                    int col = "ABCDE".IndexOf(separateCoordinates[0]);
+                                    Console.WriteLine("Got it!");
 
-                                Mark(player, row, col); 
-                                takenCoordinates.Add(upperCoordinates);                                                                  
-                                return (row, col);
+                                    Mark(player, row, col);
+                                    takenCoordinates.Add(upperCoordinates);
+                                    return (row, col);
+                                }
+
                             }
-
                         }
+
+                        Console.WriteLine("Invalid coordinates. Try again: ");
+                        return GetMove(player);
+                    }
+                    {
+                        Environment.Exit(0);
                     }
 
-                    Console.WriteLine("Invalid coordinates. Try again: ");
-                    return GetMove(player);
+
                 } 
             } 
         }
@@ -83,7 +96,8 @@ namespace _5inrow
 
         {
             Board[row, col] = player;
-            PrintBoard(); 
+            PrintBoard();
+            
         }
 
         public bool HasWon(int player, int howMany) // sprawdzic to w petli skrocic zapis
@@ -162,14 +176,16 @@ namespace _5inrow
 
             int player = Int32.Parse(p);
 
-          
 
+            
             PrintBoard();
+            
             
             while (!HasWon(player,howMany))
             {
                 GetMove(player);
-               
+                
+
                 if (IsFull()) {
                     Console.WriteLine("End of game - board is full");
                     break;
@@ -185,8 +201,8 @@ namespace _5inrow
             }
             PrintResult(player);
         }
-            
-
+       
+        
             public void PrintResult(int player)
             {
             Console.WriteLine("The winnner is: " + player + "!");
