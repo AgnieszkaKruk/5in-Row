@@ -14,3 +14,11 @@ C:\Users\Ewa\Workspace\WEB\5in-Row\5inrow\obj\Debug\5inrow.csproj.SuggestedBindi
 C:\Users\Ewa\Workspace\WEB\5in-Row\5inrow\obj\Debug\5inrow.csproj.CoreCompileInputs.cache
 C:\Users\Ewa\Workspace\WEB\5in-Row\5inrow\obj\Debug\5inrow.exe
 C:\Users\Ewa\Workspace\WEB\5in-Row\5inrow\obj\Debug\5inrow.pdb
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\bin\Debug\5inrow.exe.config
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\bin\Debug\5inrow.exe
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\bin\Debug\5inrow.pdb
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\obj\Debug\5inrow.csproj.AssemblyReference.cache
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\obj\Debug\5inrow.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\obj\Debug\5inrow.csproj.CoreCompileInputs.cache
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\obj\Debug\5inrow.exe
+C:\Users\Ewa\Workspace\WEB\C#\5INROW\5inrow\obj\Debug\5inrow.pdb
